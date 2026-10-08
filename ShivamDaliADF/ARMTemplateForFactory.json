@@ -41,7 +41,14 @@
 					{
 						"name": "ForEach_die",
 						"type": "ForEach",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Wait1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
@@ -99,7 +106,7 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "SourceDataset_die",
+											"referenceName": "SourceDataset",
 											"type": "DatasetReference",
 											"parameters": {
 												"cw_table": "@item().source.table"
@@ -108,7 +115,7 @@
 									],
 									"outputs": [
 										{
-											"referenceName": "DestinationDataset_die",
+											"referenceName": "DestinationDataset",
 											"type": "DatasetReference",
 											"parameters": {
 												"cw_fileName": "@item().destination.fileName"
@@ -117,6 +124,15 @@
 									]
 								}
 							]
+						}
+					},
+					{
+						"name": "Wait1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 1
 						}
 					}
 				],
@@ -157,12 +173,12 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_die')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_die')]"
+				"[concat(variables('factoryId'), '/datasets/SourceDataset')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_die')]",
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -198,7 +214,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_die')]",
+			"name": "[concat(parameters('factoryName'), '/SourceDataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
