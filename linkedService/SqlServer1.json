@@ -1,0 +1,21 @@
+{
+	"name": "SqlServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "tcp:127.0.0.1,52857",
+			"database": "DataWarehouse",
+			"encrypt": "optional",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "adf_practice",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlZGI0OTQwZS0yOTQ2LTRkMGMtOGQ0My0zNjY2Y2VkMGRmNmQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "LocalintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
