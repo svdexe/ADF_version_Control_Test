@@ -35,10 +35,6 @@
 								}
 							],
 							"typeProperties": {
-								"source": {
-									"type": "SqlServerSource",
-									"partitionOption": "None"
-								},
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
@@ -50,33 +46,12 @@
 										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": false,
-								"validateDataConsistency": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
+								"enableStaging": false
 							},
-							"inputs": [
-								{
-									"referenceName": "SourceDataset_g7l",
-									"type": "DatasetReference",
-									"parameters": {
-										"cw_table": "@item().source.table"
-									}
-								}
-							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_g7l",
-									"type": "DatasetReference",
-									"parameters": {
-										"cw_fileName": "@item().destination.fileName"
-									}
+									"referenceName": "Test_Sink",
+									"type": "DatasetReference"
 								}
 							]
 						}
