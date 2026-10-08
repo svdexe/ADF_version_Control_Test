@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_g7l",
+							"name": "Copy_SQL_Data_Test",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
