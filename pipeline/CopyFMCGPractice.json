@@ -82,6 +82,24 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Fail1",
+				"description": "pipeline has failed ",
+				"type": "Fail",
+				"dependsOn": [
+					{
+						"activity": "ForEach_g7l",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"message": "pipeline failed",
+					"errorCode": "404"
+				}
 			}
 		],
 		"parameters": {
