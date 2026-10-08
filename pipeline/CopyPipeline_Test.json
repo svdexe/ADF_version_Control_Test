@@ -63,7 +63,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_die",
+									"referenceName": "SourceDataset",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_table": "@item().source.table"
@@ -72,7 +72,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_die",
+									"referenceName": "DestinationDataset",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName"
