@@ -1,0 +1,15 @@
+{
+	"name": "ShivamDaliADF",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c96d2ad0-ecd6-4c5d-b049-98a1dc012c61",
+		"tenantId": "6f10613b-f0a7-4372-999f-e0f129cbdc9d"
+	}
+}
